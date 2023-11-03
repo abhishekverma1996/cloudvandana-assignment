@@ -1,0 +1,24 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] array = { 1, 2, 3, 4, 5, 6, 7 };
+		int n = array.length;
+		
+		Random rand = new Random();
+		
+		for (int i = 0; i < n; i++) {
+			int randomSwap = rand.nextInt(n);
+			int temp = array[randomSwap];
+			array[randomSwap] = array[i];
+			array[i] = temp;
+		}
+		System.out.println(Arrays.toString(array));
+	}
+}
+
+//output
+[3, 5, 1, 7, 6, 4, 2]
