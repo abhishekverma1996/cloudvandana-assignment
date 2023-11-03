@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "The quick brown fox jumps over the lazy dog";
+        input = input.toLowerCase();
+        boolean isPangram = true;
+        boolean[] alphabetPresence = new boolean[26];
+
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                int index = c - 'a';
+                alphabetPresence[index] = true;
+            }
+        }
+
+        for (boolean present : alphabetPresence) {
+            if (!present) {
+                isPangram = false;
+                break;
+            }
+        }
+
+        if (isPangram) {
+            System.out.println("The input is a pangram.");
+        } else {
+            System.out.println("The input is not a pangram.");
+        }
+    }
+}
+
+#output
+The input is a pangram.
